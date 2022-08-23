@@ -35,17 +35,26 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    func checkRegex(email : String){
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    func checkRegex(email : String)-> Bool{
+        //let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" check si drgdrg@blabla.com moi je veux srfgrssg@ et ok
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@"
                
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         
         if predicate.evaluate(with: email) {
                     //showAlert(title: <#T##String#>, message: <#T##String#>)
+            return true
                 } else{
                     showAlert(title: "Error email", message: "The email doesn't contain an @, please enter a valid one")
+                    return false
                 }
+
                   
+    }
+    func openNextView(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "PokemonTableView")
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     @IBAction func connectionGoogleButton(_ sender: Any) {
@@ -57,7 +66,12 @@ class ViewController: UIViewController {
             
             showAlert(title: "Error password", message: "The password is empty ! please enter one.")
         }
-        checkRegex(email: loginTextfieldGoogle.text!)
+        
+        //check regex et open vue suivante
+        if checkRegex(email: loginTextfieldGoogle.text!) == true {
+            openNextView()
+        }
+        
     }
     @IBAction func connectionFacebookButton(_ sender: Any) {
         if loginTextfieldFacebook.text!.isEmpty{
@@ -68,7 +82,12 @@ class ViewController: UIViewController {
             
             showAlert(title: "Error password", message: "The password is empty ! please enter one.")
         }
-        checkRegex(email: loginTextfieldFacebook.text!)
+        
+        //check regex et open vue suivante
+        if checkRegex(email: loginTextfieldFacebook.text!) == true {
+            openNextView()
+        }
+        
     }
     @IBOutlet weak var loginTextfieldGoogle: UITextField!
     @IBOutlet weak var passwordTextfielGoogle: UITextField!
