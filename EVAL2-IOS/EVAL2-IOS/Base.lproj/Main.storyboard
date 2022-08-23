@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EVAL2_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="bm2-Uc-uRl">
+                                <rect key="frame" x="0.0" y="64" width="414" height="256"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connexion via :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-vz-ceL">
+                                <rect key="frame" x="149.5" y="328.5" width="115.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="yellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XHz-e0-OUh">
+                                <rect key="frame" x="144.5" y="389" width="125.5" height="55"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_ico" translatesAutoresizingMaskIntoConstraints="NO" id="sut-xa-Uez">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                        <color key="tintColor" name="yellow-assets"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-9C-OK8">
+                                        <rect key="frame" x="55" y="12" width="70.5" height="31"/>
+                                        <color key="backgroundColor" name="darkGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Google">
+                                            <color key="baseForegroundColor" name="yellow-assets"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="googleConnectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zub-Yt-RyT"/>
+                                            <segue destination="v3U-nc-d7g" kind="show" id="aGN-M5-5L1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu3-NV-czk">
+                                <rect key="frame" x="136" y="474" width="142" height="55"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_ico" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-ea-ajS">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="facebookButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nda-3s-Jxc">
+                                        <rect key="frame" x="55" y="0.0" width="87" height="55"/>
+                                        <color key="backgroundColor" name="darkGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Facebook">
+                                            <color key="baseForegroundColor" name="yellow-assets"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="facebookConnectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHz-r0-7Jj"/>
+                                            <segue destination="28T-6O-VVj" kind="show" id="lgi-ro-fQ7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="darkGray"/>
+                        <constraints>
+                            <constraint firstItem="XHz-e0-OUh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="29S-Ks-IfK"/>
+                            <constraint firstItem="bm2-Uc-uRl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4ox-qr-4Mc"/>
+                            <constraint firstItem="hu3-NV-czk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8ru-bd-l7z"/>
+                            <constraint firstItem="bm2-Uc-uRl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LwB-8y-z3g"/>
+                            <constraint firstItem="gqT-vz-ceL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OpR-Te-nD3"/>
+                            <constraint firstItem="hu3-NV-czk" firstAttribute="top" secondItem="XHz-e0-OUh" secondAttribute="bottom" constant="30" id="QFh-Aj-2in"/>
+                            <constraint firstItem="gqT-vz-ceL" firstAttribute="firstBaseline" secondItem="bm2-Uc-uRl" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="ROw-nX-Rz4"/>
+                            <constraint firstItem="bm2-Uc-uRl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XMT-fl-gMv"/>
+                            <constraint firstItem="XHz-e0-OUh" firstAttribute="top" secondItem="gqT-vz-ceL" secondAttribute="bottom" constant="40" id="iik-Jy-kea"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="background" destination="8bC-Xf-vdC" id="JOf-fU-dp7"/>
+                        <outlet property="imageFacebook" destination="YAf-ea-ajS" id="uUr-Mz-gZL"/>
+                        <outlet property="imageGoogle" destination="sut-xa-Uez" id="bnt-g3-JES"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="68.973214285714278"/>
+        </scene>
+        <!--View Controller Connection Google-->
+        <scene sceneID="rMR-VO-JL1">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="v3U-nc-d7g" customClass="ViewControllerConnectionGoogle" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37P-if-6gt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAQ-BY-PXA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDL-kH-Iqk">
+                                        <rect key="frame" x="30" y="764" width="354" height="60"/>
+                                        <color key="backgroundColor" name="yellow-assets"/>
+                                        <color key="tintColor" name="darkGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Connection"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="google_header" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-pW-qKo">
+                                        <rect key="frame" x="51" y="51" width="304" height="260"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UE8-eu-ChZ">
+                                        <rect key="frame" x="30" y="277" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CloseGoogleButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhD-dU-3Ec">
+                                        <rect key="frame" x="338" y="117" width="76" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                        <connections>
+                                            <action selector="CloseGoogleButton:" destination="v3U-nc-d7g" eventType="touchUpInside" id="Tgn-bE-RC2"/>
+                                            <action selector="closeButton:" destination="HL1-AZ-neX" eventType="touchUpInside" id="rXc-nu-3Ow"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-rg-JHf">
+                                        <rect key="frame" x="30" y="337" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" name="darkGray"/>
+                                <constraints>
+                                    <constraint firstItem="UE8-eu-ChZ" firstAttribute="leading" secondItem="DAQ-BY-PXA" secondAttribute="leading" constant="30" id="1Wz-ow-FvJ"/>
+                                    <constraint firstItem="nE4-pW-qKo" firstAttribute="leading" secondItem="DAQ-BY-PXA" secondAttribute="leading" constant="60" id="2J4-px-V9t"/>
+                                    <constraint firstAttribute="bottom" secondItem="LDL-kH-Iqk" secondAttribute="bottom" constant="72" id="3mV-di-kcV"/>
+                                    <constraint firstItem="4YW-rg-JHf" firstAttribute="leading" secondItem="DAQ-BY-PXA" secondAttribute="leading" constant="30" id="MVM-gV-cyg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nE4-pW-qKo" secondAttribute="trailing" constant="60" id="TGL-Es-GXk"/>
+                                    <constraint firstItem="LDL-kH-Iqk" firstAttribute="centerX" secondItem="DAQ-BY-PXA" secondAttribute="centerX" id="TgV-fn-zbC"/>
+                                    <constraint firstItem="LDL-kH-Iqk" firstAttribute="leading" secondItem="DAQ-BY-PXA" secondAttribute="leading" constant="30" id="X6Q-zO-AVg"/>
+                                    <constraint firstItem="nE4-pW-qKo" firstAttribute="top" secondItem="DAQ-BY-PXA" secondAttribute="top" constant="50" id="XwC-mB-cr9"/>
+                                    <constraint firstItem="nE4-pW-qKo" firstAttribute="centerX" secondItem="DAQ-BY-PXA" secondAttribute="centerX" id="dpB-5C-K35"/>
+                                    <constraint firstItem="nE4-pW-qKo" firstAttribute="baseline" secondItem="UE8-eu-ChZ" secondAttribute="firstBaseline" constant="11" symbolType="layoutAnchor" id="jEK-v1-I7E"/>
+                                    <constraint firstItem="4YW-rg-JHf" firstAttribute="firstBaseline" secondItem="UE8-eu-ChZ" secondAttribute="baseline" constant="60" id="l9i-6g-7xg"/>
+                                    <constraint firstAttribute="trailing" secondItem="UE8-eu-ChZ" secondAttribute="trailing" constant="30" id="qKv-QG-a5P"/>
+                                    <constraint firstAttribute="trailing" secondItem="4YW-rg-JHf" secondAttribute="trailing" constant="30" id="yTH-pb-H4A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DAQ-BY-PXA" firstAttribute="bottom" secondItem="37P-if-6gt" secondAttribute="bottom" id="B39-jj-FD8"/>
+                            <constraint firstItem="DAQ-BY-PXA" firstAttribute="leading" secondItem="37P-if-6gt" secondAttribute="leading" id="XdC-c7-KWA"/>
+                            <constraint firstItem="DAQ-BY-PXA" firstAttribute="top" secondItem="37P-if-6gt" secondAttribute="top" id="eXI-3Y-o6Y"/>
+                            <constraint firstItem="DAQ-BY-PXA" firstAttribute="trailing" secondItem="37P-if-6gt" secondAttribute="trailing" id="jyD-us-eNY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TGN-0n-sMS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ub7-v3-opg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HL1-AZ-neX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="-285.26785714285711"/>
+        </scene>
+        <!--View Controller Connection Facebook-->
+        <scene sceneID="57v-jX-ux3">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="28T-6O-VVj" customClass="ViewControllerConnectionFacebook" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUi-u5-clW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-gd-Pz7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="darkGray"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D9Q-0m-PwA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="top" secondItem="D9Q-0m-PwA" secondAttribute="top" id="FYy-r8-Npg"/>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="leading" secondItem="D9Q-0m-PwA" secondAttribute="leading" id="JSD-yP-OAC"/>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="leading" secondItem="D9Q-0m-PwA" secondAttribute="leading" id="NFw-Qy-gfa"/>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="trailing" secondItem="D9Q-0m-PwA" secondAttribute="trailing" id="VXd-rf-Omr"/>
+                            <constraint firstItem="D9Q-0m-PwA" firstAttribute="bottom" secondItem="YKR-gd-Pz7" secondAttribute="bottom" id="WSt-iW-Ix0"/>
+                            <constraint firstItem="D9Q-0m-PwA" firstAttribute="trailing" secondItem="YKR-gd-Pz7" secondAttribute="trailing" id="jZt-wk-zmF"/>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="bottom" secondItem="D9Q-0m-PwA" secondAttribute="bottom" id="l0a-Y4-xe0"/>
+                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="top" secondItem="D9Q-0m-PwA" secondAttribute="top" id="xvC-f4-6aA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gwv-Re-q9p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8d6-GN-vEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="401.78571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook_ico" width="55" height="55"/>
+        <image name="google_header" width="640" height="260"/>
+        <image name="google_ico" width="55" height="55"/>
+        <image name="header_pokemon" width="711" height="256"/>
+        <namedColor name="darkGray">
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="1" green="0.88627450980392153" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow-assets">
+            <color red="1" green="0.88627450980392153" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
