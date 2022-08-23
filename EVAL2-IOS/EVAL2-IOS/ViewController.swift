@@ -9,28 +9,79 @@ import UIKit
 import SafariServices
 
 class ViewController: UIViewController {
-    @IBOutlet var background: UIView!
     
-    
-    @IBOutlet weak var imageGoogle: UIImageView!
-    @IBOutlet weak var imageFacebook: UIImageView!
-    //@IBOutlet weak var facebookConnect: UIButton!
-    @IBOutlet weak var googleConnection: UIButton!
-    @IBAction func facebookConnectionButton(_ sender: UIButton){
-        
+    @IBOutlet weak var buttonCloseGoogle: UIButton!
+    @IBOutlet weak var buttonCloseFacebook: UIButton!
+    /*
+    func closeGoogle(){
+        ViewController.dismiss
     }
-    @IBAction func googleConnectionButton(_ sender: UIButton){
-        
+     */
+
+    @IBAction func closeGoogle(_ sender: Any) {
+        self.dismiss(animated: true)
     }
-    
+    @IBAction func closeFacebook(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    /*
     override func viewWillAppear(_ animated: Bool) {
         imageGoogle.tintColor = .yellow
     }
+     */
+    
+    func showAlert(title : String, message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func checkRegex(email : String){
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+               
+        let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        
+        if predicate.evaluate(with: email) {
+                    //showAlert(title: <#T##String#>, message: <#T##String#>)
+                } else{
+                    showAlert(title: "Error email", message: "The email doesn't contain an @, please enter a valid one")
+                }
+                  
+    }
+    
+    @IBAction func connectionGoogleButton(_ sender: Any) {
+        if loginTextfieldGoogle.text!.isEmpty{
+            
+            showAlert(title: "Error login", message: "The login is empty ! please enter one.")
+        }
+        if passwordTextfielGoogle.text!.isEmpty{
+            
+            showAlert(title: "Error password", message: "The password is empty ! please enter one.")
+        }
+        checkRegex(email: loginTextfieldGoogle.text!)
+    }
+    @IBAction func connectionFacebookButton(_ sender: Any) {
+        if loginTextfieldFacebook.text!.isEmpty{
+            
+            showAlert(title: "Error login", message: "The login is empty ! please enter one.")
+        }
+        if passwordTextfieldFacebook.text!.isEmpty{
+            
+            showAlert(title: "Error password", message: "The password is empty ! please enter one.")
+        }
+        checkRegex(email: loginTextfieldFacebook.text!)
+    }
+    @IBOutlet weak var loginTextfieldGoogle: UITextField!
+    @IBOutlet weak var passwordTextfielGoogle: UITextField!
+    
+    @IBOutlet weak var loginTextfieldFacebook: UITextField!
+    @IBOutlet weak var passwordTextfieldFacebook: UITextField!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        background.backgroundColor = UIColor.darkGray
+        //background.backgroundColor = UIColor.darkGray
         
         //let heightConstraint = NSLayoutConstraint(item: textField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 100)
         

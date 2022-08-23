@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EVAL2_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="EVAL2_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,8 +41,7 @@
                                             <color key="baseForegroundColor" name="yellow-assets"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="googleConnectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zub-Yt-RyT"/>
-                                            <segue destination="v3U-nc-d7g" kind="show" id="aGN-M5-5L1"/>
+                                            <segue destination="v3U-nc-d7g" kind="show" id="DRv-60-rO1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -52,6 +51,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_ico" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-ea-ajS">
                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                        <color key="tintColor" name="yellow-assets"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="facebookButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nda-3s-Jxc">
                                         <rect key="frame" x="55" y="0.0" width="87" height="55"/>
@@ -61,8 +61,7 @@
                                             <color key="baseForegroundColor" name="yellow-assets"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="facebookConnectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHz-r0-7Jj"/>
-                                            <segue destination="28T-6O-VVj" kind="show" id="lgi-ro-fQ7"/>
+                                            <segue destination="8zX-FT-fn8" kind="show" id="ba1-iE-tMJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -82,20 +81,15 @@
                             <constraint firstItem="XHz-e0-OUh" firstAttribute="top" secondItem="gqT-vz-ceL" secondAttribute="bottom" constant="40" id="iik-Jy-kea"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="background" destination="8bC-Xf-vdC" id="JOf-fU-dp7"/>
-                        <outlet property="imageFacebook" destination="YAf-ea-ajS" id="uUr-Mz-gZL"/>
-                        <outlet property="imageGoogle" destination="sut-xa-Uez" id="bnt-g3-JES"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="68.973214285714278"/>
         </scene>
-        <!--View Controller Connection Google-->
+        <!--View Controller-->
         <scene sceneID="rMR-VO-JL1">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="v3U-nc-d7g" customClass="ViewControllerConnectionGoogle" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginGoogle" modalPresentationStyle="fullScreen" id="v3U-nc-d7g" customClass="ViewController" customModule="EVAL2_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37P-if-6gt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,30 +103,34 @@
                                         <color key="tintColor" name="darkGray"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Connection"/>
+                                        <connections>
+                                            <action selector="connectionGoogleButton:" destination="v3U-nc-d7g" eventType="touchUpInside" id="3Yx-cy-Tbi"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="google_header" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-pW-qKo">
-                                        <rect key="frame" x="51" y="51" width="304" height="260"/>
+                                        <rect key="frame" x="51" y="51" width="304" height="166"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UE8-eu-ChZ">
                                         <rect key="frame" x="30" y="277" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CloseGoogleButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhD-dU-3Ec">
-                                        <rect key="frame" x="338" y="117" width="76" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
-                                        <connections>
-                                            <action selector="CloseGoogleButton:" destination="v3U-nc-d7g" eventType="touchUpInside" id="Tgn-bE-RC2"/>
-                                            <action selector="closeButton:" destination="HL1-AZ-neX" eventType="touchUpInside" id="rXc-nu-3Ow"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-rg-JHf">
                                         <rect key="frame" x="30" y="337" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CloseGoogleButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhD-dU-3Ec">
+                                        <rect key="frame" x="282" y="42" width="102" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="HL1-AZ-neX" eventType="touchUpInside" id="rXc-nu-3Ow"/>
+                                            <action selector="closeGoogle:" destination="v3U-nc-d7g" eventType="touchUpInside" id="6Mq-1l-cb2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="darkGray"/>
                                 <constraints>
@@ -161,47 +159,150 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TGN-0n-sMS"/>
+                    <connections>
+                        <outlet property="buttonCloseGoogle" destination="UhD-dU-3Ec" id="KAG-DL-0A4"/>
+                        <outlet property="loginTextfieldGoogle" destination="UE8-eu-ChZ" id="eAv-NR-pFL"/>
+                        <outlet property="passwordTextfielGoogle" destination="4YW-rg-JHf" id="tDq-6O-4IO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ub7-v3-opg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="HL1-AZ-neX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="-285.26785714285711"/>
         </scene>
-        <!--View Controller Connection Facebook-->
-        <scene sceneID="57v-jX-ux3">
+        <!--View Controller-->
+        <scene sceneID="JYo-Gw-3sV">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="28T-6O-VVj" customClass="ViewControllerConnectionFacebook" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tUi-u5-clW">
+                <viewController storyboardIdentifier="LoginFacebook" modalPresentationStyle="fullScreen" id="8zX-FT-fn8" customClass="ViewController" customModule="EVAL2_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tk9-oX-HYi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-gd-Pz7">
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgI-rx-B7z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRE-Ar-bMk">
+                                        <rect key="frame" x="30" y="764" width="354" height="60"/>
+                                        <color key="backgroundColor" name="yellow-assets"/>
+                                        <color key="tintColor" name="darkGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Connection"/>
+                                        <connections>
+                                            <action selector="connectionFacebookButton:" destination="8zX-FT-fn8" eventType="touchUpInside" id="rNU-id-KOq"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="faceook_header" translatesAutoresizingMaskIntoConstraints="NO" id="waI-Mm-KqX">
+                                        <rect key="frame" x="51" y="51" width="304" height="260"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-NU-nZj">
+                                        <rect key="frame" x="30" y="295" width="354" height="94"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2R-5L-hbp">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2A-6a-6A2">
+                                                <rect key="frame" x="0.0" y="60" width="354" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="CloseGoogleButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf5-Wb-dPv">
+                                        <rect key="frame" x="304" y="77" width="80" height="31"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="HL1-AZ-neX" eventType="touchUpInside" id="gHx-DI-fDi"/>
+                                            <action selector="closeButton:" destination="Y3k-Aa-bxn" eventType="touchUpInside" id="uue-je-46f"/>
+                                            <action selector="closeFacebook:" destination="8zX-FT-fn8" eventType="touchUpInside" id="Uh8-hR-ioa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" name="darkGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nf5-Wb-dPv" secondAttribute="trailing" id="3L0-mF-1ad"/>
+                                    <constraint firstAttribute="bottom" secondItem="SRE-Ar-bMk" secondAttribute="bottom" constant="72" id="3Xv-ED-iS8"/>
+                                    <constraint firstItem="gGy-NU-nZj" firstAttribute="top" secondItem="waI-Mm-KqX" secondAttribute="bottom" constant="100" id="60n-ms-WIQ"/>
+                                    <constraint firstItem="waI-Mm-KqX" firstAttribute="centerX" secondItem="zgI-rx-B7z" secondAttribute="centerX" id="6Vx-LX-bDJ"/>
+                                    <constraint firstItem="SRE-Ar-bMk" firstAttribute="leading" secondItem="zgI-rx-B7z" secondAttribute="leading" constant="30" id="8Fn-Hm-BGM"/>
+                                    <constraint firstItem="gGy-NU-nZj" firstAttribute="centerX" secondItem="zgI-rx-B7z" secondAttribute="centerX" id="Dph-zB-3n5"/>
+                                    <constraint firstItem="gGy-NU-nZj" firstAttribute="top" secondItem="Nf5-Wb-dPv" secondAttribute="bottom" constant="147" id="JXC-Yh-a0h"/>
+                                    <constraint firstItem="SRE-Ar-bMk" firstAttribute="centerX" secondItem="zgI-rx-B7z" secondAttribute="centerX" id="N2r-2o-abZ"/>
+                                    <constraint firstItem="waI-Mm-KqX" firstAttribute="leading" secondItem="zgI-rx-B7z" secondAttribute="leading" constant="60" id="PT7-ZG-UFf"/>
+                                    <constraint firstItem="gGy-NU-nZj" firstAttribute="leading" secondItem="zgI-rx-B7z" secondAttribute="leading" constant="30" id="Ye3-s2-cf6"/>
+                                    <constraint firstAttribute="trailing" secondItem="waI-Mm-KqX" secondAttribute="trailing" constant="60" id="cIY-1B-Ptc"/>
+                                    <constraint firstItem="waI-Mm-KqX" firstAttribute="top" secondItem="zgI-rx-B7z" secondAttribute="top" constant="50" id="vfx-Dx-bO1"/>
+                                    <constraint firstAttribute="trailing" secondItem="gGy-NU-nZj" secondAttribute="trailing" constant="30" id="x4L-Hk-vpT"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="D9Q-0m-PwA"/>
+                        <viewLayoutGuide key="safeArea" id="u6H-ld-c1e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="top" secondItem="D9Q-0m-PwA" secondAttribute="top" id="FYy-r8-Npg"/>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="leading" secondItem="D9Q-0m-PwA" secondAttribute="leading" id="JSD-yP-OAC"/>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="leading" secondItem="D9Q-0m-PwA" secondAttribute="leading" id="NFw-Qy-gfa"/>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="trailing" secondItem="D9Q-0m-PwA" secondAttribute="trailing" id="VXd-rf-Omr"/>
-                            <constraint firstItem="D9Q-0m-PwA" firstAttribute="bottom" secondItem="YKR-gd-Pz7" secondAttribute="bottom" id="WSt-iW-Ix0"/>
-                            <constraint firstItem="D9Q-0m-PwA" firstAttribute="trailing" secondItem="YKR-gd-Pz7" secondAttribute="trailing" id="jZt-wk-zmF"/>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="bottom" secondItem="D9Q-0m-PwA" secondAttribute="bottom" id="l0a-Y4-xe0"/>
-                            <constraint firstItem="YKR-gd-Pz7" firstAttribute="top" secondItem="D9Q-0m-PwA" secondAttribute="top" id="xvC-f4-6aA"/>
+                            <constraint firstItem="zgI-rx-B7z" firstAttribute="trailing" secondItem="tk9-oX-HYi" secondAttribute="trailing" id="Hf1-GZ-Q2z"/>
+                            <constraint firstItem="zgI-rx-B7z" firstAttribute="leading" secondItem="tk9-oX-HYi" secondAttribute="leading" id="SPs-E0-tQG"/>
+                            <constraint firstItem="zgI-rx-B7z" firstAttribute="top" secondItem="tk9-oX-HYi" secondAttribute="top" id="STK-fU-bkS"/>
+                            <constraint firstItem="zgI-rx-B7z" firstAttribute="bottom" secondItem="tk9-oX-HYi" secondAttribute="bottom" id="xKz-sM-kna"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Gwv-Re-q9p"/>
+                    <navigationItem key="navigationItem" id="JDk-Um-D7h"/>
+                    <connections>
+                        <outlet property="buttonCloseFacebook" destination="Nf5-Wb-dPv" id="UnJ-KG-o7J"/>
+                        <outlet property="loginTextfieldFacebook" destination="w2R-5L-hbp" id="1wo-0r-0ak"/>
+                        <outlet property="passwordTextfieldFacebook" destination="Z2A-6a-6A2" id="tIy-ng-84l"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8d6-GN-vEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1j-zB-FIR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y3k-Aa-bxn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1005.7971014492755" y="401.78571428571428"/>
+            <point key="canvasLocation" x="1005.7971014492755" y="364.95535714285711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nMl-oT-aRp">
+            <objects>
+                <viewController id="p0Q-LX-ma0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NJB-LN-CEv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEf-bd-g1i">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="KY2-t0-8b7"/>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-gr-RhW">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="w3F-4c-G8S"/>
+                                    <tabBarItem systemItem="more" id="XYr-Sy-9X8"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XOh-fU-h3t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bEf-bd-g1i" firstAttribute="top" secondItem="XOh-fU-h3t" secondAttribute="top" id="ITE-cS-Mmg"/>
+                            <constraint firstAttribute="bottom" secondItem="RmU-gr-RhW" secondAttribute="bottom" id="c4z-Vr-qTw"/>
+                            <constraint firstItem="RmU-gr-RhW" firstAttribute="trailing" secondItem="XOh-fU-h3t" secondAttribute="trailing" id="gcw-Tu-To9"/>
+                            <constraint firstItem="bEf-bd-g1i" firstAttribute="trailing" secondItem="XOh-fU-h3t" secondAttribute="trailing" id="oEW-Ig-1VQ"/>
+                            <constraint firstItem="bEf-bd-g1i" firstAttribute="leading" secondItem="XOh-fU-h3t" secondAttribute="leading" id="ptq-Ei-QX1"/>
+                            <constraint firstItem="RmU-gr-RhW" firstAttribute="leading" secondItem="XOh-fU-h3t" secondAttribute="leading" id="q4m-oy-Ldc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FqC-VB-0Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2155" y="79"/>
         </scene>
     </scenes>
     <resources>
         <image name="facebook_ico" width="55" height="55"/>
+        <image name="faceook_header" width="348" height="145"/>
         <image name="google_header" width="640" height="260"/>
         <image name="google_ico" width="55" height="55"/>
         <image name="header_pokemon" width="711" height="256"/>
