@@ -151,6 +151,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Ni-dV-CBc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DAQ-BY-PXA" firstAttribute="bottom" secondItem="37P-if-6gt" secondAttribute="bottom" id="B39-jj-FD8"/>
@@ -287,6 +288,8 @@
                                         <color key="badgeColor" name="yellow-assets"/>
                                     </tabBarItem>
                                 </items>
+                                <color key="tintColor" name="yellow-assets"/>
+                                <color key="selectedImageTintColor" name="yellow-assets"/>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iII-0d-u7Z">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>

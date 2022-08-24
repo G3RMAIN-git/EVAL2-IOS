@@ -8,7 +8,28 @@
 import UIKit
 import SafariServices
 
+enum type{
+    case water
+    case fire
+    case grass
+    case flying
+    case Dragon
+    case poison
+}
+
+struct Pokemon{
+    var name : String
+    var type : type
+    var imageName : String
+    var generation : Int
+    var pokedexNumber : Int
+    var height : Float
+    
+}
+
 class ViewController: UIViewController {
+    
+    var pokemonList = [Pokemon]()
     
     @IBOutlet weak var buttonCloseGoogle: UIButton!
     @IBOutlet weak var buttonCloseFacebook: UIButton!
@@ -29,6 +50,11 @@ class ViewController: UIViewController {
         imageGoogle.tintColor = .yellow
     }
      */
+    
+    func addPokemon(name : String, type : type, imageName : String, generation : Int,pokedexNumber : Int, height : Float){
+        //pokemonList.append(Pokemon(name : "Salameche", type : .fire,imageName : "Salameche", generation: 1,pokedexNumber : 004, height: 0.6))
+        pokemonList.append(Pokemon(name: name , type: type ,imageName: imageName  , generation: generation ,pokedexNumber: pokedexNumber , height: height))
+    }
     
     func showAlert(title : String, message : String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -95,10 +121,40 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginTextfieldFacebook: UITextField!
     @IBOutlet weak var passwordTextfieldFacebook: UITextField!
     
+    //pokemonList.append(<#T##Element#>)
+    
+    //var tabBar : UITabBar!
+    
+    /*
+    func setViewControllers(viewControllers: [Pokemon]?,animated: true){
+        
+    }*/
+    
+    @IBOutlet var tableViewPokemon : UITableView!
+    
+    //var tableViewPokemon : UITableView!
+    
+    
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addPokemon(name : "Salameche", type : .fire,imageName : "Salameche", generation: 1,pokedexNumber : 004, height: 0.6)
+        //print(pokemonList[0])
+        addPokemon(name: "Reptincel", type: .fire, imageName: "Reptincel", generation: 1, pokedexNumber: 005, height: 1.1)
+        addPokemon(name: "Dracaufeu", type: .fire, imageName: "Dracaufeu", generation: 1, pokedexNumber: 006, height: 1.7)
+        addPokemon(name: "Bulbizarre", type: .grass, imageName: "Bulbizarre", generation: 1, pokedexNumber: 001, height: 0.7)
+        addPokemon(name: "Herbizarre", type: .grass, imageName: "Herbizarre", generation: 1, pokedexNumber: 002, height: 1.0)
+        addPokemon(name: "Florizarre", type: .grass, imageName: "Florizarre", generation: 1, pokedexNumber: 003, height: 0.2)
+        addPokemon(name: "Carapuce", type: .water, imageName: "Carapuce", generation: 1, pokedexNumber: 007, height: 0.5)
+        
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
         //background.backgroundColor = UIColor.darkGray
         

@@ -17,6 +17,8 @@
 		E4B1830D28B4EEDE003ED587 /* EVAL2_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1830C28B4EEDE003ED587 /* EVAL2_IOSUITests.swift */; };
 		E4B1830F28B4EEDE003ED587 /* EVAL2_IOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B1830E28B4EEDE003ED587 /* EVAL2_IOSUITestsLaunchTests.swift */; };
 		E4B1831E28B4F8CB003ED587 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4B1831D28B4F8CB003ED587 /* Localizable.strings */; };
+		E4ED3F8328B60A680026F184 /* TabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3F8128B60A680026F184 /* TabTableViewCell.swift */; };
+		E4ED3F8428B60A680026F184 /* TabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4ED3F8228B60A680026F184 /* TabTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E4B1830C28B4EEDE003ED587 /* EVAL2_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVAL2_IOSUITests.swift; sourceTree = "<group>"; };
 		E4B1830E28B4EEDE003ED587 /* EVAL2_IOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVAL2_IOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4B1831D28B4F8CB003ED587 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E4ED3F8128B60A680026F184 /* TabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTableViewCell.swift; sourceTree = "<group>"; };
+		E4ED3F8228B60A680026F184 /* TabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				E4B1831D28B4F8CB003ED587 /* Localizable.strings */,
 				E4B182F628B4EEDD003ED587 /* LaunchScreen.storyboard */,
 				E4B182F928B4EEDD003ED587 /* Info.plist */,
+				E4ED3F8128B60A680026F184 /* TabTableViewCell.swift */,
+				E4ED3F8228B60A680026F184 /* TabTableViewCell.xib */,
 			);
 			path = "EVAL2-IOS";
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4ED3F8428B60A680026F184 /* TabTableViewCell.xib in Resources */,
 				E4B182F828B4EEDD003ED587 /* LaunchScreen.storyboard in Resources */,
 				E4B1831E28B4F8CB003ED587 /* Localizable.strings in Resources */,
 				E4B182F528B4EEDD003ED587 /* Assets.xcassets in Resources */,
@@ -265,6 +272,7 @@
 				E4B182F028B4EEDB003ED587 /* ViewController.swift in Sources */,
 				E4B182EC28B4EEDB003ED587 /* AppDelegate.swift in Sources */,
 				E4B182EE28B4EEDB003ED587 /* SceneDelegate.swift in Sources */,
+				E4ED3F8328B60A680026F184 /* TabTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
