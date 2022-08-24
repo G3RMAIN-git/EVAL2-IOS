@@ -132,6 +132,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableViewPokemon : UITableView!
     
+    /*
+    func setupUI() {
+        tableViewPokemon.register(UINib(nibName: TabTableViewCell.identifier, bundle: .main),
+                           forCellReuseIdentifier: TabTableViewCell.identifier)
+        //tableViewPokemon.register(UINib(nibName: TabTableViewCell.identifier, bundle: .main),forHeaderFooterViewReuseIdentifier: TabTableViewCell.identifier)
+        //tableViewPokemon.dataSource = self
+        //tableViewPokemon.delegate = self
+    }
+     */
+    
     //var tableViewPokemon : UITableView!
     
     
@@ -149,7 +159,12 @@ class ViewController: UIViewController {
         addPokemon(name: "Florizarre", type: .grass, imageName: "Florizarre", generation: 1, pokedexNumber: 003, height: 0.2)
         addPokemon(name: "Carapuce", type: .water, imageName: "Carapuce", generation: 1, pokedexNumber: 007, height: 0.5)
         
+        /*
+        tableViewPokemon.register(UINib(nibName: tableViewPokemon.cellId, bundle: nil), forCellReuseIdentifier: tableViewPokemon.cellId)
+        tableViewPokemon.dataSource = self
+        tableViewPokemon.delegate = self
         
+        */
         
         
         
@@ -179,3 +194,56 @@ class ViewController: UIViewController {
 
 }
 
+/*
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //var vue = storyboard?.instantiateViewControler(withidentifier : "PlanetViewDetails") as! PlanetViewDetails
+        guard let pokemon = pokemon(at: indexPath)
+        else {
+            fatalError("Unable to retrieve planet")
+        }
+
+        guard let planetVC = storyboard?.instantiateViewController(withIdentifier: "TabTableViewCell") as? TabTableViewCell
+        else {
+            fatalError("Unable to instantiate PlanetDetails as TabTableViewCell")
+        }
+        
+        
+
+        pokemonVC.pokemon = pokemon
+        show(pokemonVC, sender: nil)
+        
+        //planetVC.modalpresentationStyle = .fullscreen
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        pokemonList.count
+    }
+    
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TabTableViewCell.identifier, for: indexPath) as? TabTableViewCell
+        else {
+            fatalError("Unable to dequeue TableViewCellPlanet")
+        }
+        
+        let film = Film.all[indexPath.section]
+        let planetURL = film.planets[indexPath.row]
+
+        let planet = Planet.all.first(where: { item in
+            item.url == planetURL
+        })
+
+        //cell.setup(planet: Planet.all[indexPath.section])
+        cell.setup(planet: planet!)
+
+        return cell
+    }
+
+}
+ */
